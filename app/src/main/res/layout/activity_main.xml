@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이름을 입력하세요."
-        android:textSize="20dp"
-        android:id="@+id/idName"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="몸무게를 입력하세요."
-        android:textSize="20dp"
-        android:id="@+id/idKg"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="키를 입력하세요"
-        android:textSize="20dp"
-        android:id="@+id/idCm"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="결과"
-        android:textSize="20dp"
-        android:id="@+id/btRes"/>
-
-    <TextView
+        android:text="카우프계산하기"
+        android:layout_margin="10dp"
+        android:id="@+id/btKaup"/>
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="입니다"
-        android:textSize="20dp"
-        android:id="@+id/tvRes"/>
+        android:text="계산기"
+        android:layout_margin="10dp"
+        android:id="@+id/btCalc"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_margin="10dp"
+        android:id="@+id/btLogin"/>
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="구글맵열기"-->
+        <!--android:layout_margin="10dp"/>-->
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="구글검색하기"-->
+        <!--android:layout_margin="10dp"/>-->
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="문자보내기"-->
+        <!--android:layout_margin="10dp"/>-->
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="사진보내기"-->
+        <!--android:layout_margin="10dp"/>-->
 
 </LinearLayout>
