@@ -48,7 +48,7 @@ public class SignupActivity extends Activity implements View.OnClickListener{
         String name = etName.getText().toString();
         String email = etMail.getText().toString();
         MemberBean member = new MemberBean();
-        MemberService service = new MemberServiceImpl();
+        MemberService service2 = new MemberServiceImpl();
 //        MemberDAO dao = new MemberDAO(this.getApplicationContext());
 
         member.setId(id);
@@ -57,7 +57,7 @@ public class SignupActivity extends Activity implements View.OnClickListener{
         member.setEmail(email);
 
 //        Log.d(this, "임시...");
-        String msg = service.signup(member);
+        String msg = service2.signup(member);
 //        String msg = dao.signup(member);
 //        txResult.setText( "회원가입 결과 : " + msg);
         txResult.setText( "회원가입 결과 ^^");

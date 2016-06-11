@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,6 +37,7 @@ import java.util.List;
 
 import com.example.user.myapp2.R;
 import com.example.user.myapp2.member.MemberBean;
+import com.example.user.myapp2.member.MemberDAO;
 import com.example.user.myapp2.member.MemberService;
 import com.example.user.myapp2.member.MemberServiceImpl;
 
@@ -46,48 +48,38 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends Activity implements View.OnClickListener{
 
-    EditText etID, etPW, etName, etMail;
-    //    Button btSignup;
-    TextView txResult;
-
+    EditText etID,etPW;
+    TextView textResult;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         etID = (EditText) findViewById(R.id.etID);
         etPW = (EditText) findViewById(R.id.etPW);
-        etName = (EditText) findViewById(R.id.etNAME);
-        etMail = (EditText) findViewById(R.id.etMail);
-        txResult = (TextView) findViewById(R.id.txResult);
-
-//        btSignup.setOnClickListener(this);
+        textResult = (TextView) findViewById(R.id.txResult);
         findViewById(R.id.btSignup).setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
-
         String id = etID.getText().toString();
         String pw = etPW.getText().toString();
-        String name = etName.getText().toString();
-        String email = etMail.getText().toString();
         MemberBean member = new MemberBean();
-        MemberService service = new MemberServiceImpl();
-//        MemberDAO dao = new MemberDAO(this.getApplicationContext());
-
+        //    MemberServiceImpl service = new MemberServiceImpl();
+        MemberDAO dao = new MemberDAO(this.getApplicationContext());
         member.setId(id);
         member.setPw(pw);
-        member.setName(name);
-        member.setEmail(email);
+        member = dao.login(member);
+        Log.i("DB 다녀온 결과 ID", member.getId());
 
-//        Log.d(this, "임시...");
-//        String msg = service.signup(member);
-        service.signup(member);
-//        String msg = dao.signup(member);
-//        txResult.setText( "회원가입 결과 : " + msg);
-        txResult.setText( "회원가입 결과 ^^");
+        if( member == null ){
+            textResult.setText("로그인 실패 입니다");
+        }
+        else
+        {
+            textResult.setText("로그인 결과 : "+member.getName()+" 환영합니다");
+        }
     }
 }
 
