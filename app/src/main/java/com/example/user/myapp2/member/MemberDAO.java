@@ -25,26 +25,46 @@ public class MemberDAO extends SQLiteOpenHelper {
     }
 
     public String signup( MemberBean member ) {
-        String id = member.getId();
-        String pw = member.getPw();
-        String name = member.getName();
-        String email = member.getEmail();
+   //     String id = member.getId();
+   //     String pw = member.getPw();
+   //     String name = member.getName();
+   //     String email = member.getEmail();
 
-        Log.i( "name", name );
-        Log.i( "pw", pw );
-        Log.i( "name", name );
-        Log.i( "email", email );
+     //   Log.i( "name", name );
+     //   Log.i( "pw", pw );
+     //   Log.i( "name", name );
+     //   Log.i( "email", email );
 
         return "회원가입을 축하합니다.";
     }
 
     public MemberBean login(MemberBean member) {
         MemberBean mem  = new MemberBean();
+        mem.setId(member.getId());
+        mem.setPw(member.getPw());
+        mem.setName(member.getName());
+        mem.setEmail(member.getEmail());
+
+        Log.i( "name", member.getId() );
+        Log.i( "pw", member.getPw() );
+        Log.i( "name", member.getName() );
+        Log.i( "email", member.getEmail() );
+
         return mem;
     }
 
     public MemberBean update(MemberBean member) {
         MemberBean mem  = new MemberBean();
+        mem.setId(member.getId());
+        mem.setPw(member.getPw());
+        mem.setName(member.getName());
+        mem.setEmail(member.getEmail());
+
+        Log.i( "name", member.getId() );
+        Log.i( "pw", member.getPw() );
+        Log.i( "name", member.getName() );
+        Log.i( "email", member.getEmail() );
+
         return mem;
     }
 

@@ -49,7 +49,7 @@ public class SignupActivity extends Activity implements View.OnClickListener{
         String email = etMail.getText().toString();
         MemberBean member = new MemberBean();
         MemberService service = new MemberServiceImpl();
-        MemberDAO dao = new MemberDAO(this.getApplicationContext());
+//        MemberDAO dao = new MemberDAO(this.getApplicationContext());
 
         member.setId(id);
         member.setPw(pw);
@@ -57,8 +57,9 @@ public class SignupActivity extends Activity implements View.OnClickListener{
         member.setEmail(email);
 
 //        Log.d(this, "임시...");
-//        String msg = service.signup(member);
-        String msg = dao.signup(member);
-        txResult.setText( "회원가입 결과 : " + msg);
+        String msg = service.signup(member);
+//        String msg = dao.signup(member);
+//        txResult.setText( "회원가입 결과 : " + msg);
+        txResult.setText( "회원가입 결과 ^^");
     }
 }
