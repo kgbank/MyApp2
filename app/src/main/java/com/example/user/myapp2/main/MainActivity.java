@@ -13,6 +13,7 @@ import com.example.user.myapp2.R;
 import com.example.user.myapp2.calc.CalcActivity;
 import com.example.user.myapp2.kaup.KaupActivity;
 import com.example.user.myapp2.login.LoginActivity;
+import com.example.user.myapp2.signup.SignupActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
@@ -29,6 +30,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.btCalc).setOnClickListener(this);
  //       ((Button) findViewById(R.id.btnCalc)).setOnClickListener(this);
         findViewById(R.id.btLogin).setOnClickListener(this);
+        findViewById(R.id.btSignup).setOnClickListener(this);
 //        Calc.setOnClickListener(this);
 //        Login.setOnClickListener(this);
 //        btn4.setOnClickListener(this);
@@ -57,6 +59,12 @@ public class MainActivity extends Activity implements View.OnClickListener{
 //                tMsg = Toast.makeText(this, "btLogin", Toast.LENGTH_LONG);
 //                tMsg.show();
                 startActivity(new Intent(this, LoginActivity.class));
+                break;
+            case R.id.btSignup :
+//                setContentView(R.layout.activity_calc);
+//                tMsg = Toast.makeText(this, "btLogin", Toast.LENGTH_LONG);
+//                tMsg.show();
+                startActivity(new Intent(this, SignupActivity.class));
                 break;
         }
     }
