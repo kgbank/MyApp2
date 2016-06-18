@@ -97,7 +97,7 @@ public class GroupActivity extends Activity implements View.OnClickListener{
 
             case R.id.btInsert :  // 등록
                 db = groupHelper.getWritableDatabase();
-                if( etName.getText() == null){
+                if( etName.getText().length() == 0 ){
                     Toast.makeText(getApplicationContext(), "입력값 확인필요", Toast.LENGTH_LONG).show();
                     db.close();
                     break;
