@@ -33,6 +33,13 @@
         android:layout_margin="10dp"
         android:id="@+id/btSignup"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="가수 그룹 이름 관리"
+        android:layout_margin="10dp"
+        android:id="@+id/btGroup"/>
+
     <!--<Button-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
