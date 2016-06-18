@@ -58,12 +58,14 @@
         <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".signup.SignupActivity"
             android:label="@string/title_activity_signup"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".group.GroupActivity"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".group.GroupActivity" />
+        <activity android:name=".movie.MovieActivity" />
+        <activity android:name=".spinner.SpinnerActivity"></activity>
     </application>
 
 </manifest>

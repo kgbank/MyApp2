@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,7 +15,9 @@ import com.example.user.myapp2.calc.CalcActivity;
 import com.example.user.myapp2.group.GroupActivity;
 import com.example.user.myapp2.kaup.KaupActivity;
 import com.example.user.myapp2.login.LoginActivity;
+import com.example.user.myapp2.movie.MovieActivity;
 import com.example.user.myapp2.signup.SignupActivity;
+import com.example.user.myapp2.spinner.SpinnerActivity;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
@@ -33,6 +36,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
         findViewById(R.id.btLogin).setOnClickListener(this);
         findViewById(R.id.btSignup).setOnClickListener(this);
         findViewById(R.id.btGroup).setOnClickListener(this);
+        findViewById(R.id.btMovie).setOnClickListener(this);
+        findViewById(R.id.btSpinner).setOnClickListener(this);
 //        Calc.setOnClickListener(this);
 //        Login.setOnClickListener(this);
 //        btn4.setOnClickListener(this);
@@ -73,6 +78,18 @@ public class MainActivity extends Activity implements View.OnClickListener{
 //                tMsg = Toast.makeText(this, "btLogin", Toast.LENGTH_LONG);
 //                tMsg.show();
                 startActivity(new Intent(this, GroupActivity.class));
+                break;
+            case R.id.btMovie :
+//                setContentView(R.layout.activity_calc);
+//                tMsg = Toast.makeText(this, "btLogin", Toast.LENGTH_LONG);
+//                tMsg.show();
+                startActivity(new Intent(this, MovieActivity.class));
+                break;
+            case R.id.btSpinner :
+//                setContentView(R.layout.activity_calc);
+//                tMsg = Toast.makeText(this, "btLogin", Toast.LENGTH_LONG);
+//                tMsg.show();
+                startActivity(new Intent(this, SpinnerActivity.class));
                 break;
         }
     }

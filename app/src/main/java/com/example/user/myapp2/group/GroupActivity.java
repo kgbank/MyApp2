@@ -3,6 +3,7 @@ package com.example.user.myapp2.group;
 import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -96,6 +97,11 @@ public class GroupActivity extends Activity implements View.OnClickListener{
 
             case R.id.btInsert :  // 등록
                 db = groupHelper.getWritableDatabase();
+                if( etName.getText() == null){
+                    Toast.makeText(getApplicationContext(), "입력값 확인필요", Toast.LENGTH_LONG).show();
+                    db.close();
+                    break;
+                }
                 db.execSQL( "INSERT INTO girl_group(name, num) VALUES('"+etName.getText()+"','"+etNum.getText()+"');");
                 db.close();
                 tvResult.setText("등록완료");
@@ -104,7 +110,11 @@ public class GroupActivity extends Activity implements View.OnClickListener{
 
             case R.id.btFind :  // 조회
                 db = groupHelper.getReadableDatabase();
-
+                if( etName.getText() == null){
+                    Toast.makeText(getApplicationContext(), "입력값 확인필요", Toast.LENGTH_LONG).show();
+                    db.close();
+                    break;
+                }
                 cursor = db.rawQuery("SELECT * from girl_group WHERE name = '"+etName.getText()+"';", null);
                 while(cursor.moveToNext()){
                     Id = String.valueOf(cursor.getInt(0));
@@ -122,7 +132,16 @@ public class GroupActivity extends Activity implements View.OnClickListener{
 
             case R.id.btUpdate :  // 수정
                 db = groupHelper.getWritableDatabase();
-                db.execSQL( "UPDATE girl_group set num = "+etNum.getText()+" WHERE name = '"+etName.getText()+"';");
+
+                try {
+                    db.execSQL( "UPDATE girl_group set num = "+etNum.getText()+" WHERE name = '"+etName.getText()+"';");
+                }
+                catch (SQLiteException e){
+                    Toast.makeText(getApplicationContext(), "입력값 확인필요", Toast.LENGTH_LONG).show();
+                    db.close();
+                    break;
+                }
+
                 db.close();
                 tvResult.setText("수정완료");
                 Toast.makeText(getApplicationContext(), "수정성공", Toast.LENGTH_LONG).show();
@@ -130,6 +149,11 @@ public class GroupActivity extends Activity implements View.OnClickListener{
 
             case R.id.btDelete : // 삭제
                 db = groupHelper.getWritableDatabase();
+                if( etNum == null){
+                    Toast.makeText(getApplicationContext(), "입력값 확인필요", Toast.LENGTH_LONG).show();
+                    db.close();
+                    break;
+                }
                 db.execSQL( "DELETE FROM girl_group WHERE _id = " + etNum.getText());
                 db.close();
                 tvResult.setText("삭제완료");
