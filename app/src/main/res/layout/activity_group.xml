@@ -34,41 +34,57 @@
             android:layout_height="wrap_content"
             android:hint="인원을 입력하세요"
             android:textSize="20dp"
-            android:id="@+id/etCnt"/>
+            android:id="@+id/etNum"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            android:id="@+id/btInit"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리스트"
+            android:id="@+id/btList"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그룹수"
+            android:id="@+id/btCount"/>
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center" >
         <Button
-            android:layout_width="220px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="입력"
             android:id="@+id/btInsert"/>
         <Button
-            android:layout_width="220px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="조회"
-            android:id="@+id/btSelect"/>
+            android:id="@+id/btFind"/>
         <Button
-            android:layout_width="220px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="수정"
             android:id="@+id/btUpdate"/>
         <Button
-            android:layout_width="220px"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="삭제"
             android:id="@+id/btDelete"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="초기화"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/btReset"/>
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -76,6 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:background="#c6c6c6"/>
+            android:background="#c6c6c6"
+            android:id="@+id/tvResult"/>
     </LinearLayout>
 </LinearLayout>
